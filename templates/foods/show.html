@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <h1>Searching List</h1>
+</div>    
+<div class="position-relative">
+    <table class="table table-bordered table-light">
+        <thead>
+        <tr>
+            <th scope="col">Label</th>
+            <th scope="col">Image</th>
+            <th scope="col">Nutritions per 100g</th>
+            <th scope="col">Like/Unlike</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for food in food_list %}
+        <tr>
+            <td>{{ food.label }}</td>
+            <td><img src="{{ food.image_url }}" alt="" height="300" width="300"></td>
+            <td>
+                {% for nutrient in food.nutrition %}
+                
+                    <li>{{ nutrient.name }}: {{ nutrient.value}}</li>
+                {% endfor %}
+                
+            </td>
+            {% if food.api_id in food_likes %}    
+            <td class="align-middle">
+                <button class="like-button btn btn-secondary liked" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}" style="width:100%">Unlike</button></td>
+
+            {% else %}
+            <td class="align-middle">
+                <button class="like-button btn btn-primary" data-api-id="{{ food.api_id }}" data-user-id="{{ user_id }}" style="width:100%">Like</button>
+            </td>
+
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}
+
+<script src="/static/app.js"></script>

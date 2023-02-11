@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body_class %}error-404{%endblock %}
+
+{% block content %}
+
+  <div class="message-404">
+    <h4 class="display-4">Sorry, that page doesn't exist! {{ request.status }}</h4>
+    <p class="m-3">
+      <a href="/"><b>return to the homepage</b></a>.</p>
+  </div>
+
+{% endblock %}

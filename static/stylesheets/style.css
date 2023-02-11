@@ -1,0 +1,157 @@
+/* ====================== General */
+
+body {
+    background-color: #e6ecf0;
+  }
+  
+  body.error-404 {
+    background-color: #1da1f2;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    border-radius: 50px;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+  }
+  
+  /* ======================= Nav */
+  
+  .navbar {
+    background-color: #fff;
+    height: 46px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 9999;
+  }
+  
+  .navbar a {
+    color: #66757f;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .navbar a:hover {
+    color: #1c94e0;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-brand > img {
+    display: inline-block;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    width: 20px;
+    border-radius: 2px;
+  }
+  
+  .nav > li > a > img {
+    width: 32px;
+    border-radius: 32px;
+  }
+  
+  ul.nav.navbar-nav {
+    align-items: center;
+  }
+  
+  ul.nav.navbar-nav li {
+    margin: 0 0.5rem;
+    display: flex;
+  }
+  
+  nav form.navbar-form {
+    display: flex;
+    position: relative;
+  }
+  
+  #search.form-control {
+    border-radius: 20px;
+    margin-bottom: 0;
+    width: 100%;
+    font-size: 13px;
+    padding-right: 28px;
+    box-sizing: border-box;
+  }
+  
+  #search.form-control + .btn {
+    position: absolute;
+    right: 9px;
+    top: 2px;
+    bottom: 4px;
+    z-index: 1;
+    padding: 0;
+    color: #66757f;
+  }
+  
+  #search.form-control + .btn:active,
+  #search.form-control + .btn:focus {
+    box-shadow: none;
+  }
+  
+  #search:active,
+  #search:focus {
+    box-shadow: none;
+    border: 2px solid #007bff;
+  }
+  
+  /* on "onboarding" pages (signup & login), the navbar is
+     different: no search box, the logo is centered, and it has
+     a background color.
+   */
+  
+   .onboarding > .navbar {
+    background-image: url("/static/images/nav-bg.png");
+    background-size: 100% 100%;
+  }
+  
+  .onboarding .navbar-header {
+    margin: 0 auto;
+  }
+  
+  .onboarding .navbar-brand {
+    margin: 0;
+  }
+  
+  .onboarding .navbar-brand span {
+    display: none;
+  }
+  
+  .onboarding .nav.navbar-nav.navbar-right {
+    position: absolute;
+    right: 16px;
+  }
+  
+  .onboarding > .navbar a {
+    color: #fff;
+  }
+  
+  .onboarding > .navbar form.navbar-form {
+    display: none;
+  }
+  
+  .onboarding {
+    background-color: #fff;
+  }
+  
+  @media (max-width: 468px) {
+    nav form.navbar-form {
+      display: none;
+    }
+  }
+  
+  nav + .container {
+    margin-bottom: 1rem;
+  }
+
+.like_button {
+  color:#1c94e0;
+}

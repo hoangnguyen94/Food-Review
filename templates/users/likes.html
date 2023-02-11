@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="col-sm-9">
+    <div class="row">
+        <ul class="list-group" id="foods">
+          {% for msg in likes %}
+            <li class="list-group-item">
+              <a href="/foods/{{ food.id  }}" class="food-link"/>
+              <a href="/users/{{ food.user.id }}">
+                <img src="{{ food.user.image_url }}" alt="" class="timeline-image">
+              </a>
+              <div class="food-area">
+                <a href="/users/{{ food.user.id }}">@{{ food.user.username }}</a>
+                <p>{{ food.label }}</p>
+                <p>{{ food.description }}</p>
+                <p>{{ food.image_url }}</p>
+              </div>
+              {% if user.id == g.user.id %}
+              <form method="POST" action="/foods/{{ food.id }}/like" class="foods-like">
+                <button class="
+                  btn 
+                  btn-sm 
+                  {{'btn-primary'}}"
+                >
+                  <i class="fa fa-thumbs-up"></i> 
+                </button>
+              </form>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
