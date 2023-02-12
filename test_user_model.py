@@ -19,6 +19,7 @@ from models import db, User
 os.environ['DATABASE_URL'] = "postgresql:///mealplan_test"
 
 
+
 # Now we can import app
 
 from app import app

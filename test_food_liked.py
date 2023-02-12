@@ -79,60 +79,8 @@ class HomepageTestCase(TestCase):
         food1 = Food.query.filter_by(api_id='1').first()
         food2 = Food.query.filter_by(api_id='2').first()
         food_list = [food1, food2]
-        print(response.text)
-        # for food in food_list:
-        #     food_name = food.label
-        #     self.assertTrue(soup.find(string=food_name))
-        # self.assertEqual(soup, food_list)
-        # with requests.Session() as session:
-        #     response = session.post('http://localhost:5000/login', data={
-        #     'username': 'testuser',
-        #     'password': 'testpassword'
-        #     })
-        #     soup = BeautifulSoup(response.text, 'html.parser')
-        #     print('!!!!!!!!!!!!!!!!!')
-        #     print(soup)
-        #     self.assertEqual(response.status_code, 200)
-
-        #     response = session.get('http://localhost:5000/')
-            
-        #     self.assertEqual(response.status_code, 200)
-            
-        #     soup = BeautifulSoup(response.text, 'html.parser')
-        #     print('@@@@@@@@@@@@@@@')
-        #     print(soup)
-        #     food1 = Food.query.filter_by(api_id='1').first()
-        #     food2 = Food.query.filter_by(api_id='2').first()
-        #     food_list = [food1, food2]
-        #     self.assertEqual(soup, food_list)
-
-
-
-        # self.assertIn(str(food1.id), response.data.decode('utf-8'))
-        # self.assertIn(str(food2.id), response.data.decode('utf-8'))
-        # self.assertIn(food1.label, response.data.decode('utf-8'))
-        # self.assertIn(food2.label, response.data.decode('utf-8'))
-    # def test_homepage(self):
-    #     # Send a post request to the login endpoint
-    #     response = self.app.post('/login', data={
-    #     'username': 'testuser',
-    #     'password': 'testpassword'})
-
-    #     # Check if the response is successful (status code 200)
-    #     self.assertEqual(response.status_code, 200)
-        
-    #     response = self.app.get('/')
-    #     self.assertEqual(response.status_code, 200)
-
-        
-    #     food1 = Food.query.filter_by(api_id='1').first()
-    #     food2 = Food.query.filter_by(api_id='2').first()
-
-    #     food_list = [food1, food2]
-    #     print(response.get_json())
-    #     self.assertEqual(response.get_json()['foods'], food_list)
-    #     self.assertEqual(response.get_json()['foods'], food_list)
-        # self.assertEqual(response.get_json['liked'], [self.food1.id, self.food2.id])
+    
+        self.assertEqual(soup, food_list)
 
     def tearDown(self):
         db.session.remove()
